@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
           
       - name: Install dependencies
-        run: npm ci
+        run: npm install
         
       - name: Build
         run: npm run build
@@ -30,4 +30,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BOOKEND_AA091 }}'
           channelId: live
-          projectId:   # Replace with your project ID
+          projectId: bookend-aa091
