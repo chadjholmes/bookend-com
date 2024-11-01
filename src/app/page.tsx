@@ -6,6 +6,7 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BookOpen, Users, TrendingUp, Bookmark } from 'lucide-react'
+import { Toaster, toast } from 'react-hot-toast';
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -25,14 +26,23 @@ export default function Home() {
 
       setStatus('success');
       setEmail('');
+      toast.success('Thanks for signing up! We\'ll be in touch soon.', {
+        duration: 5000,
+        style: {
+          background: '#4338ca',
+          color: '#fff',
+        },
+      });
     } catch (error) {
       console.error('Error adding email:', error);
       setStatus('error');
+      toast.error('Something went wrong. Please try again.');
     }
   };
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-indigo-600 to-purple-700 relative overflow-hidden">
+      <Toaster position="bottom-center" />
       {/* Navigation */}
       <nav className="relative z-10 container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
