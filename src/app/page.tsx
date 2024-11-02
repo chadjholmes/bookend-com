@@ -56,11 +56,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-6 pt-20 pb-32 text-center">
         <h1 className="text-white text-6xl font-semibold mb-6 max-w-3xl mx-auto leading-tight">
-          Track your reading journey, connect with fellow bookworms.
+          Your personal library, reading goals, and progress tracker in one place
         </h1>
         <p className="text-white/70 text-lg mb-12 max-w-2xl mx-auto">
-          Build lasting reading habits, join vibrant book clubs, and discover your next favorite book. 
-          Track your progress, set goals, and connect with readers worldwide.
+          Be part of something special — join our beta and help shape the future of Bookends. Now's your chance to help us craft the perfect reading companion!
         </p>
         <div className="flex justify-center gap-4">
           <form onSubmit={handleSubmit} className="flex gap-4">
