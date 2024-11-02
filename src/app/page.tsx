@@ -5,7 +5,7 @@ import { db } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BookOpen, Users, TrendingUp, Bookmark } from 'lucide-react'
+import { BookOpen, Target, TrendingUp } from 'lucide-react'
 import { Toaster, toast } from 'react-hot-toast';
 
 export default function Home() {
@@ -98,35 +98,60 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="relative z-10 container mx-auto px-6 pb-20">
-        <div className="grid grid-cols-4 gap-12 text-white">
+        <div className="grid grid-cols-3 gap-12 text-white">
           <div className="flex flex-col items-center text-center">
             <BookOpen className="w-8 h-8 mb-4 opacity-80" />
-            <h3 className="font-semibold mb-2 text-lg">Track Progress</h3>
-            <p className="text-white/70 text-sm">Log your reading progress and build consistent habits</p>
+            <h3 className="font-semibold mb-2 text-lg">Manage Your Library</h3>
+            <p className="text-white/70 text-sm">Keep track of your books and organize your reading list</p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <Users className="w-8 h-8 mb-4 opacity-80" />
-            <h3 className="font-semibold mb-2 text-lg">Join Clubs</h3>
-            <p className="text-white/70 text-sm">Connect with readers and join engaging book clubs</p>
+            <Target className="w-8 h-8 mb-4 opacity-80" />
+            <h3 className="font-semibold mb-2 text-lg">Set Goals</h3>
+            <p className="text-white/70 text-sm">Create and track your reading goals to stay motivated</p>
           </div>
           <div className="flex flex-col items-center text-center">
             <TrendingUp className="w-8 h-8 mb-4 opacity-80" />
-            <h3 className="font-semibold mb-2 text-lg">Set Goals</h3>
-            <p className="text-white/70 text-sm">Set and achieve your reading goals with insights</p>
-          </div>
-          <div className="flex flex-col items-center text-center">
-            <Bookmark className="w-8 h-8 mb-4 opacity-80" />
-            <h3 className="font-semibold mb-2 text-lg">Discover</h3>
-            <p className="text-white/70 text-sm">Find your next great read through personalized recommendations</p>
+            <h3 className="font-semibold mb-2 text-lg">View Your Progress</h3>
+            <p className="text-white/70 text-sm">Track your reading stats and celebrate milestones</p>
           </div>
         </div>
       </section>
 
       {/* App Preview */}
       <section className="relative z-10 container mx-auto px-6 pb-20">
-        <div className="bg-white rounded-2xl p-8 shadow-xl">
-          {/* Add your app preview content here */}
-          {/* This could show a mock reading tracker or book club interface */}
+        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-white/10">
+          <div className="grid grid-cols-3 gap-8">
+            <div className="relative w-full max-w-[400px] mx-auto">
+              <div className="absolute w-[120px] h-[25px] bg-black rounded-full top-3 left-1/2 -translate-x-1/2 z-10" />
+              <Image
+                src="/screenshots/library.png"
+                alt="Library Screenshot"
+                width={400}
+                height={267}
+                className="rounded-[40px] w-full shadow-lg border-8 border-black"
+              />
+            </div>
+            <div className="relative w-full max-w-[400px] mx-auto">
+              <div className="absolute w-[120px] h-[25px] bg-black rounded-full top-3 left-1/2 -translate-x-1/2 z-10" />
+              <Image
+                src="/screenshots/progress.png"
+                alt="Progress Tracking Screenshot"
+                width={400}
+                height={267}
+                className="rounded-[40px] w-full shadow-lg border-8 border-black"
+              />
+            </div>
+            <div className="relative w-full max-w-[400px] mx-auto">
+              <div className="absolute w-[120px] h-[25px] bg-black rounded-full top-3 left-1/2 -translate-x-1/2 z-10" />
+              <Image
+                src="/screenshots/clubs.png"
+                alt="Book Clubs Screenshot"
+                width={400}
+                height={267}
+                className="rounded-[40px] w-full shadow-lg border-8 border-black"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </main>
