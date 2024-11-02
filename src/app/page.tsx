@@ -81,7 +81,7 @@ export default function Home() {
             </button>
           </form>
           <Link 
-            href="https://discord.gg/tGekukT5Su"
+            href="https://discord.gg/CVV3gc3qnZ"
             target="_blank"
             className="bg-[#5865F2] text-white px-6 py-3 rounded-lg hover:bg-[#4752c4] font-medium flex items-center justify-center gap-2 w-full sm:w-auto"
           >
