@@ -48,7 +48,7 @@ export default function Home() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="text-white text-2xl">📚</span>
-            <span className="text-white text-2xl font-semibold">Bookend</span>
+            <span className="text-white text-2xl font-semibold">Bookends</span>
           </div>
         </div>
       </nav>
@@ -59,7 +59,8 @@ export default function Home() {
           Your personal library, reading goals, and progress tracker in one place
         </h1>
         <p className="text-white/70 text-lg mb-12 max-w-2xl mx-auto">
-          Be part of something special — join our beta and help shape the future of Bookends. Now's your chance to help us craft the perfect reading companion!
+          Be part of something special — join our beta and help shape the future of Bookends. 
+          Your voice will directly influence how we build the perfect reading companion.
         </p>
         <div className="flex justify-center gap-4">
           <form onSubmit={handleSubmit} className="flex gap-4">
