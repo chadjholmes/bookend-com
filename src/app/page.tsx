@@ -55,26 +55,26 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-6 pt-20 pb-32 text-center">
-        <h1 className="text-white text-6xl font-semibold mb-6 max-w-3xl mx-auto leading-tight">
+        <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 max-w-3xl mx-auto leading-tight">
           Your personal library, reading goals, and progress tracker in one place
         </h1>
-        <p className="text-white/70 text-lg mb-12 max-w-2xl mx-auto">
+        <p className="text-white/70 text-base md:text-lg mb-12 max-w-2xl mx-auto">
           Be part of something special — join our beta and help shape the future of Bookends. 
           Your voice will directly influence how we build the perfect reading companion.
         </p>
-        <div className="flex justify-center gap-4">
-          <form onSubmit={handleSubmit} className="flex gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email to get started"
-              className="px-6 py-3 rounded-lg w-80 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 backdrop-blur-sm"
+              className="px-6 py-3 rounded-lg w-full sm:w-80 bg-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 backdrop-blur-sm"
               disabled={status === 'loading'}
             />
             <button 
               type="submit"
-              className="bg-white text-indigo-700 px-6 py-3 rounded-lg hover:bg-white/90 font-medium disabled:opacity-50"
+              className="bg-white text-indigo-700 px-6 py-3 rounded-lg hover:bg-white/90 font-medium disabled:opacity-50 w-full sm:w-auto"
               disabled={status === 'loading'}
             >
               {status === 'loading' ? 'Signing up...' : 'Sign up for beta'}
@@ -83,7 +83,7 @@ export default function Home() {
           <Link 
             href="https://discord.gg/tGekukT5Su"
             target="_blank"
-            className="bg-[#5865F2] text-white px-6 py-3 rounded-lg hover:bg-[#4752c4] font-medium flex items-center gap-2"
+            className="bg-[#5865F2] text-white px-6 py-3 rounded-lg hover:bg-[#4752c4] font-medium flex items-center justify-center gap-2 w-full sm:w-auto"
           >
             <Image 
               src="/discord-mark-white.svg" 
@@ -120,9 +120,8 @@ export default function Home() {
       {/* App Preview */}
       <section className="relative z-10 container mx-auto px-6 pb-20">
         <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-white/10">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="relative w-full max-w-[400px] mx-auto">
-              <div className="absolute w-[120px] h-[25px] bg-black rounded-full top-3 left-1/2 -translate-x-1/2 z-10" />
               <Image
                 src="/screenshots/library.png"
                 alt="Library Screenshot"
@@ -132,7 +131,6 @@ export default function Home() {
               />
             </div>
             <div className="relative w-full max-w-[400px] mx-auto">
-              <div className="absolute w-[120px] h-[25px] bg-black rounded-full top-3 left-1/2 -translate-x-1/2 z-10" />
               <Image
                 src="/screenshots/progress.png"
                 alt="Progress Tracking Screenshot"
@@ -141,8 +139,7 @@ export default function Home() {
                 className="rounded-[40px] w-full shadow-lg border-8 border-black"
               />
             </div>
-            <div className="relative w-full max-w-[400px] mx-auto">
-              <div className="absolute w-[120px] h-[25px] bg-black rounded-full top-3 left-1/2 -translate-x-1/2 z-10" />
+            <div className="relative w-full max-w-[400px] mx-auto lg:col-span-1 md:col-span-2">
               <Image
                 src="/screenshots/clubs.png"
                 alt="Book Clubs Screenshot"
