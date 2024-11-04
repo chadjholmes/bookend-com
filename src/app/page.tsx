@@ -5,7 +5,7 @@ import { db } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BookOpen, Brain, CheckCheck, CheckIcon, Target, TrendingUp } from 'lucide-react'
+import { Brain, CheckIcon, Target, TrendingUp } from 'lucide-react'
 import { Toaster, toast } from 'react-hot-toast';
 
 export default function Home() {
