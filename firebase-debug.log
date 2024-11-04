@@ -1,0 +1,16 @@
+[debug] [2024-11-02T19:37:12.260Z] ----------------------------------------------------------------------
+[debug] [2024-11-02T19:37:12.265Z] Command:       /Users/chadholmes/.nvm/versions/node/v20.15.1/bin/node /Users/chadholmes/.nvm/versions/node/v20.15.1/bin/firebase deploy --only functions
+[debug] [2024-11-02T19:37:12.265Z] CLI Version:   13.23.1
+[debug] [2024-11-02T19:37:12.265Z] Platform:      darwin
+[debug] [2024-11-02T19:37:12.265Z] Node Version:  v20.15.1
+[debug] [2024-11-02T19:37:12.265Z] Time:          Sat Nov 02 2024 13:37:12 GMT-0600 (Mountain Daylight Time)
+[debug] [2024-11-02T19:37:12.265Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-02T19:37:12.301Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-02T19:37:12.302Z] > authorizing via signed-in user (chadjayholmes@gmail.com)
+[debug] [2024-11-02T19:37:12.302Z] [iam] checking project bookend-aa091 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2024-11-02T19:37:12.302Z] Checked if tokens are valid: true, expires at: 1730577787536
+[debug] [2024-11-02T19:37:12.302Z] Checked if tokens are valid: true, expires at: 1730577787536
+[debug] [2024-11-02T19:37:12.303Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/bookend-aa091:testIamPermissions [none]
+[debug] [2024-11-02T19:37:12.303Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/bookend-aa091:testIamPermissions x-goog-quota-user=projects/bookend-aa091
+[debug] [2024-11-02T19:37:12.303Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/bookend-aa091:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
