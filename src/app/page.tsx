@@ -83,7 +83,7 @@ export default function Home() {
             </li>
           </ul>
         </div>
-        <p className="text-white/70 text-base md:text-lg mb-12 max-w-2xl mx-auto">
+        <p className="text-white/70 text-base md:text-lg mb-12 max-w-2xl mx-auto bg-gray-800/40 p-4 rounded-lg">
           Be part of something special — join our beta and help shape the future of Bookends.
           Your voice will directly influence how we build the perfect reading companion.
         </p>
