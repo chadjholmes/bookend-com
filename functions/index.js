@@ -27,7 +27,7 @@ const transporter = nodemailer.createTransport({
 exports.sendWelcomeEmail = onDocumentCreated({
   document: "betaSignups/{docId}",
   region: "us-central1",
-  secrets: ["gmail_password"]
+  secrets: ["GMAIL_PASSWORD"]
 }, async (event) => {
   const snapshot = event.data;
   if (!snapshot) {
