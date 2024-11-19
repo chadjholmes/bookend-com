@@ -6,8 +6,7 @@
  *
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
-const { logger } = require("firebase-functions/logger");
-const functions = require("firebase-functions");
+const { log } = require("firebase-functions/logger");
 const admin = require("firebase-admin");
 const nodemailer = require("nodemailer");
 const { onDocumentCreated } = require("firebase-functions/v2/firestore");
@@ -29,19 +28,30 @@ exports.sendWelcomeEmail = onDocumentCreated({
   region: "us-central1",
   secrets: ["GMAIL_PASSWORD"]
 }, async (event) => {
+  log("Function triggered with event:", event);
+
   const snapshot = event.data;
   if (!snapshot) {
-    logger.log("No data associated with the event");
+    log("No data associated with the event");
     return;
   }
+
+  log("Snapshot data:", snapshot);
 
   const email = snapshot.data().email;
   if (!email) {
-    logger.error("No email found in the document");
+    log("No email found in the document");
     return;
   }
 
-  await sendEmail(email);
+  log("Email found:", email);
+
+  try {
+    await sendEmail(email);
+    log("Email sent successfully to:", email);
+  } catch (error) {
+    log("Error sending email:", error);
+  }
 });
 
 // Function to send email
@@ -81,10 +91,16 @@ const sendEmail = (email) => {
           'And feel free to use that channel as open discussion and/or feedback as you get familiar with the app. I will be sure to monitor it pretty regularly!'
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return logger.error("Error sending email:", error);
-    }
-    logger.log("Email sent:", info.response);
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        log("Error sending email:", error);
+        return reject(error);
+      }
+      else {
+        log("Email sent:", info.response);
+        return resolve(info);
+      }
+    });
   });
 };
