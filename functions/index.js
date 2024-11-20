@@ -46,6 +46,8 @@ exports.sendWelcomeEmail = onDocumentCreated({
 
   log("Email found:", email);
 
+  await addToTestingGroup(email);
+
   try {
     await sendEmail(email);
     log("Email sent successfully to:", email);
@@ -53,6 +55,30 @@ exports.sendWelcomeEmail = onDocumentCreated({
     log("Error sending email:", error);
   }
 });
+
+// Function to add to testing group
+const addToTestingGroup = async (email) => {
+  fetch(`https://api.appstoreconnect.apple.com/v1/betaTesters`, {
+    method: "POST",
+    body: JSON.stringify({
+      "data": {
+        "type": "betaTesters",
+        "attributes": {
+          "email": email
+        },
+        "relationships": {
+          "betaGroups": {
+            "data": [{ "type": "betaGroups", "id": "1234567890" }]
+          }
+        }
+      }
+    }),
+    headers: {
+      "Authorization": `Bearer ${process.env.ASC_API_KEY}`,
+      "Content-Type": "application/json"
+    }
+  });
+};
 
 // Function to send email
 const sendEmail = (email) => {
